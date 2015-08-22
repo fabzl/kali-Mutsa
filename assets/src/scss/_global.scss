@@ -1,0 +1,49 @@
+/**
+ * Global app/site styles
+ */
+body {
+	background-color: $color-bg;
+	text-align:center;
+}
+
+h2 p { 
+
+	text-align:center;
+}
+
+.is-blue { 
+
+	background-color: $blue;
+}
+
+
+.is-pink { 
+
+	background-color: $blue;
+}
+
+.main-row { 
+
+	max-width: 1440px;
+	min-width: 300px;
+}
+
+.thin-text { 
+
+	 font-weight: normal;
+}
+
+
+.yt-container { 
+
+	margin-bottom: 50px;
+}
+
+
+.content-cluster { 
+
+	max-width: 800px;
+	text-align:center;
+	margin: 50px auto;
+}
+
