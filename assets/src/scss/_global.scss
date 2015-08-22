@@ -47,3 +47,21 @@ h2 p {
 	margin: 50px auto;
 }
 
+.main-menu { 
+
+	width: 10%;
+	height: auto;
+	backgroud-color: #666;
+	position :fixed;
+
+	ul {  
+		list-style:none;
+	}
+
+}
+
+.menu-item { 
+	transform: scale(.2);
+	width:60px;
+	height:60px;
+}
