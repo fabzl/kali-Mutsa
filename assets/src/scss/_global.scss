@@ -4,6 +4,9 @@
 body {
 	background-color: $color-bg;
 	text-align:center;
+	max-width: 100%;
+	overflow-x: hidden;
+	position: relative;
 }
 
 h2 p { 
