@@ -4,17 +4,21 @@
 body {
 	background-color: $color-bg;
 	text-align:center;
-	max-width: 100%;
 	overflow-x: hidden;
 	position: relative;
 }
 
-h2 p { 
+picture { 
+	height:0;
+
+}
+
+h2 p {
 
 	text-align:center;
 }
 
-.is-blue { 
+.is-blue {
 
 	background-color: $blue;
 }
@@ -67,3 +71,18 @@ h2 p {
 	width:60px;
 	height:60px;
 }
+
+
+.element-cluster { 
+
+	@include respond-min($bp-huge) {
+
+		width:	100%;
+		height: 450px;
+		background-image:url('../img/bg_header.jpg');
+		max-width: auto!important;
+	}
+}
+
+
+
