@@ -12,14 +12,14 @@ require("./helpers/log");
 require("./helpers/shims");
 
 require("./libs/skrollr");
-require("./libs/picturefill");
+//require("./libs/picturefill");
 
 //initialise KM object
 var KM = {};
 
 KM.Config = {
 
-	// s : skrollr.init(),
+	
 
 	init : function () {
 
@@ -40,18 +40,21 @@ KM.Config = {
 
 	informScroll : function () { 
 		
-		console.log("informScroll");
-		console.log(window.pageXOffset);// Alias for the window.scrollX
-		console.log(window.pageYOffset );//Alias for the window.scrollY
-		console.log(window.scrollX );//Distance from outer edge of browser the viewport scrolled horizontally
-		console.log(window.scrollY );//Distance from top of the viewport to the top of the scrollbar. Value will vary as you scroll downward.
+		// console.log("informScroll");
+		// console.log(window.pageXOffset);// Alias for the window.scrollX
+		// console.log(window.pageYOffset );//Alias for the window.scrollY
+		// console.log(window.scrollX );//Distance from outer edge of browser the viewport scrolled horizontally
+		// console.log(window.scrollY );//Distance from top of the viewport to the top of the scrollbar. Value will vary as you scroll downward.
 	}
 
 
 };
-
+var  sk = skrollr.init(),
 
 KM.Config.init();
+
+
+
 
 
 // ;(function() {
