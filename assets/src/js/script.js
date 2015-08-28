@@ -16,6 +16,7 @@ require("./libs/skrollr");
 
 //initialise KM object
 var KM = {};
+var  sk = skrollr.init();
 
 KM.Config = {
 
@@ -40,6 +41,8 @@ KM.Config = {
 
 	informScroll : function () { 
 		
+
+		console.dir(sk);
 		// console.log("informScroll");
 		// console.log(window.pageXOffset);// Alias for the window.scrollX
 		// console.log(window.pageYOffset );//Alias for the window.scrollY
@@ -49,7 +52,7 @@ KM.Config = {
 
 
 };
-var  sk = skrollr.init();
+
 
 KM.Config.init();
 
