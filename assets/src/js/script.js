@@ -49,7 +49,7 @@ KM.Config = {
 
 
 };
-var  sk = skrollr.init(),
+var  sk = skrollr.init();
 
 KM.Config.init();
 
