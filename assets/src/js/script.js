@@ -14,8 +14,15 @@ var KM = {};
 
 KM.Config = {
 
+	windowHeight: window.innerHeight,
+	documentHeight: document.documentElement.scrollHeight,
+	container: document.querySelector('.container'),
+
 	olTop: document.querySelector('.ol-top'),
 	olBot: document.querySelector('.ol-bottom'),
+
+	// isIE : (navigator.userAgent.indexOf("MSIE") != -1);
+
 
 	init : function () {
 
@@ -25,26 +32,51 @@ KM.Config = {
 		KM.UI = require('./modules/UI');
 		KM.UI.init();
 
-		KM.Config.scrollerControl();
+		// if (KM.Config.isIE) {
+			KM.Config.defineOverlayers();
+			KM.Config.scrollerControl();
+
+		// }else{ 
+
+		// 	KM.Config.alphaOverlayers();
+		// }
 	},
 
+	defineOverlayers : function () {
+
+			var olHeight = KM.Config.windowHeight;
+
+			KM.Config.olTop.style.height = olHeight+"px";
+			KM.Config.olBot.style.height = olHeight+"px";
+			KM.Config.olTop.alternate = false;
+			KM.Config.olTop.alternate = true;
+	},
 
 	scrollerControl:function () {
 
+		window.onscroll = KM.Config.throttle(2000, function() {
 
-		window.onscroll = KM.Config.throttle(500, function() {
+				var olPosTop = KM.Config.determineOlPosY(KM.Config.olTop);
 
-				KM.Config.informScroll();
+				var olPosBot = KM.Config.determineOlPosY(KM.Config.olBot);
 
-				console.log(KM.Config.olTop, KM.Config.olBot);
-
-				KM.Config.setCss3Style(KM.Config.olTop,'transform','translateY('+window.scrollY+'px) skew(-30deg) rotate(-30deg)');
-				KM.Config.setCss3Style(KM.Config.olBot,'transform','translateY('+window.scrollY+'px) skew(-30deg) rotate(-30deg)');
-
+				KM.Config.setCss3Style(KM.Config.olTop,'transform','translateY('+olPosTop+'px) skew(-30deg) rotate(-30deg)');
+				KM.Config.setCss3Style(KM.Config.olBot,'transform','translateY('+olPosBot+'px) skew(-30deg) rotate(-30deg)');
 		});
 	},
 
+	determineOlPosY: function (obj) {
 
+		var posY ;
+		if (obj.alternate === true ) { 
+			posY = KM.Config.windowHeight+KM.Config.windowHeight*.6;
+			obj.alternate = false;
+		}else{
+			posY = -(KM.Config.windowHeight*1.3);
+			obj.alternate = true;
+		}
+		return posY;
+	},
 	// Throttle calls to "callback" routine and ensure that it
 	// is not invoked any more often than "delay" milliseconds.
 	throttle:function(delay, callback) {
@@ -107,11 +139,6 @@ KM.Config = {
 				if(p in el.style)
 					el.style[p] = val;
 			}
-	},
-
-	createNavigation : function () { 
-
-
 	},
 
 	informScroll : function () {

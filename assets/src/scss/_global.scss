@@ -8,9 +8,8 @@ body {
 	position: relative;
 }
 
-picture { 
+picture {
 	height:0;
-
 }
 
 h2 p {
@@ -24,46 +23,44 @@ h2 p {
 }
 
 
-.is-pink { 
+.is-pink {
 
 	background-color: $blue;
 }
 
-.main-row { 
+.main-row {
 
 	max-width: 1440px;
 	min-width: 300px;
 }
 
-.thin-text { 
+.thin-text {
 
-	 font-weight: normal;
+	font-weight: normal;
 }
 
 
-.yt-container { 
+.yt-container {
 
 	margin-bottom: 50px;
 }
 
-
-.content-cluster { 
+.content-cluster {
 
 	max-width: 800px;
 	text-align:center;
 	margin: 50px auto;
 }
 
-.main-menu { 
+.main-menu {
 
 	width: 10%;
 	height: auto;
 	position :fixed;
 
-	ul {  
+	ul {
 		list-style:none;
 	}
-
 }
 
 
@@ -72,14 +69,14 @@ h2 p {
 	padding-bottom: 50px;
 }
 
-.menu-item { 
+.menu-item {
 	transform: scale(.2);
 	width:60px;
 	height:60px;
 }
 
 
-.element-cluster { 
+.element-cluster {
 
 	@include respond-min($bp-huge) {
 
@@ -90,5 +87,51 @@ h2 p {
 	}
 }
 
+.overlayer {
+
+	position: fixed;
+	pointer-events: none;
+	width: 100%;
+//	height:600px;
+	transform: translateY(-100%);
+//	position: absolute;
+	transition: all 2s ease-in-out;
+	animation-fill-mode: forwards;
+	backface-visibility: hidden;
+}
+
+.ol-top {
+	z-index : 2;
+	background-color: $yellow;
+	mix-blend-mode: difference;
+	top:0;
+}
+
+.ol-bottom {
+	z-index : 3;
+	background-color: $red;
+	mix-blend-mode: difference;
+	top:0;
+}
+
+.container { 
+
+	overflow: hidden;
+}
+/*  general fade out */
+@keyframes anim {
+    0%   {transform: translateY(-100%) skew(-30deg) rotate(-30deg);}
+    100% {transform: translateY(100%) skew(-30deg) rotate(-30deg);}
+}
+
+
+.is-animating  {
+
+	animation: anim 2s ease-in-out;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;
+	backface-visibility: hidden;
+}
 
 
