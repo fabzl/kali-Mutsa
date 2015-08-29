@@ -36,21 +36,30 @@
 
 }
 
-
-.overlayer { 
-
-  z-index: 2;
-  background-color:$color-secondary;
-  width: 100%;
-  height:600px;
-  transform: skew(-30deg) rotate(-30deg);
-  position: absolute;
-  top:0px;
-  mix-blend-mode: difference;
-
+.overlayer {
+	pointer-events: none;
+	width: 100%;
+	height:600px;
+	transform: skew(-30deg) rotate(-30deg);
+	position: absolute;
+	transition: all .5s ease-in-out;
+	animation-fill-mode: forwards;
+	backface-visibility: hidden;
 }
 
+.ol-top {
+	z-index : 2;
+	background-color: $yellow;
+	mix-blend-mode: difference;
+	top:0;
+}
 
+.ol-bottom {
+	z-index : 3;
+	background-color: $red;
+	mix-blend-mode: difference;
+	top:0;
+}
 /*  general fade out */
 @keyframes anim {
     0%   {transform: translateY(-100%) skew(-30deg) rotate(-30deg);}

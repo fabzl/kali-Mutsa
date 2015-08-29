@@ -17,7 +17,6 @@ module.exports.tasks = {
 				spawn: false
 			}
 		},
-
 		images : {
 			files: ['<%=config.img.srcDir%>/**/*.{svg,png,jpg,gif}'],
 			tasks: ['imagemin:images'],
