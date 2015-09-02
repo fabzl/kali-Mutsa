@@ -72,7 +72,7 @@ KM.Config = {
 			posY = KM.Config.windowHeight+KM.Config.windowHeight*.6;
 			obj.alternate = false;
 		}else{
-			posY = -(KM.Config.windowHeight*1.3);
+			posY = -(KM.Config.windowHeight*1.5);
 			obj.alternate = true;
 		}
 		return posY;
@@ -139,16 +139,16 @@ KM.Config = {
 				if(p in el.style)
 					el.style[p] = val;
 			}
-	},
-
-	informScroll : function () {
-
-		console.log("informScroll");
-		console.log(window.pageXOffset);// Alias for the window.scrollX
-		console.log(window.pageYOffset );//Alias for the window.scrollY
-		console.log(window.scrollX );//Distance from outer edge of browser the viewport scrolled horizontally
-		console.log(window.scrollY );//Distance from top of the viewport to the top of the scrollbar. Value will vary as you scroll downward.
 	}
+
+	// informScroll : function () {
+
+	// 	console.log("informScroll");
+	// 	console.log(window.pageXOffset);// Alias for the window.scrollX
+	// 	console.log(window.pageYOffset );//Alias for the window.scrollY
+	// 	console.log(window.scrollX );//Distance from outer edge of browser the viewport scrolled horizontally
+	// 	console.log(window.scrollY );//Distance from top of the viewport to the top of the scrollbar. Value will vary as you scroll downward.
+	// }
 };
 
 
